@@ -46,7 +46,7 @@ PR['registerLangHandler'](
 	    // builtin symbols
 	    [PR['PR_LITERAL'], /^(?:NULL|NA(?:_(?:integer|real|complex|character)_)?|Inf|TRUE|FALSE|NaN|\.\.(?:\.|[0-9]+))(?![A-Za-z0-9_.])/],
 	    // assignment, operators, and parens, etc.
-	    [PR['PR_PUNCTUATION'], /^(?:<<?-|->>?|-|==|<=|>=|<|>|&&?|!=|\|\|?|\*|\+|\^|\/|!|%.*?%|=|~|\$|@|:{1,3}|[\[\](){};,])/],
+	    [PR['PR_PUNCTUATION'], /^(?:<<?-|->>?|-|==|<=|>=|<|>|&&?|!=|\|\|?|\*|\+|\^|\/|!|%.*?%|=|~|\$|@|:{1,3}|[\[\](){};,?])/],
 	    // valid variable names
 	    [PR['PR_PLAIN'], /^(?:[A-Za-z]+[A-Za-z0-9_.]*|\.[a-zA-Z_][0-9a-zA-Z\._]*)(?![A-Za-z0-9_.])/],
 	    // string backtick
