@@ -38,12 +38,12 @@ PR['registerLangHandler'](
         ],
         [
             [PR['PR_COMMENT'],     /^#.*/],
-	    [PR['PR_KEYWORD'],     /^(?:for|in|while|if|else|break|return|function)(?![A-Za-z0-9_.])/],
+	    [PR['PR_KEYWORD'],     /^(?:if|else|for|while|repeat|in|next|break|return|switch|function)(?![A-Za-z0-9_.])/],
 	    [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
 	    // builtin symbols
-	    [PR['PR_LITERAL'], /^(?:NULL|NA(?:_(?:integer|real|complex|character)_)?|TRUE|FALSE|NaN|\.\.\.)(?![A-Za-z0-9_.])/],
+	    [PR['PR_LITERAL'], /^(?:NULL|NA(?:_(?:integer|real|complex|character)_)?|Inf|TRUE|FALSE|NaN|\.\.(?:\.|[0-9]+))(?![A-Za-z0-9_.])/],
 	    // assignment, operators, and parens, etc.
-	    [PR['PR_PUNCTUATION'], /^(?:<-|=|~|%[^%]+%|{|}|\[|\]|\[\[|\]\]|\$|\(|\)|@|:::?|;|,|<-|-|==|<=|>=|<|>|&&|&|!=|\|\|?|\*|\+|\^|\/|:)/],
+	    [PR['PR_PUNCTUATION'], /^(?:<<?-|->>?|-|==|<=|>=|<|>|&&?|!=|\|\|?|\*|\+|\^|\/|!|%.*?%|=|~|\$|@|:{1,3}|[\[\](){};,])/],
 	    [PR['PR_PLAIN'], /^[A-Za-z.]+[A-Za-z0-9_.]*(?![A-Za-z0-9_.])/],
 	    // string backtick
 	    [PR['PR_STRING'], /^`.+`/]
