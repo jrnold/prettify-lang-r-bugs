@@ -39,12 +39,16 @@ PR['registerLangHandler'](
         [
             [PR['PR_COMMENT'],     /^#.*/],
 	    [PR['PR_KEYWORD'],     /^(?:if|else|for|while|repeat|in|next|break|return|switch|function)(?![A-Za-z0-9_.])/],
-	    [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
+	    // hex numbes
+	    [PR['PR_LITERAL'], /^0[xX][a-fA-F0-9]+([pP][0-9]+)?[Li]?/],
+	    // Decimal numbers
+            [PR['PR_LITERAL'], /^[+-]?([0-9]+(\.[0-9]+)?|\.[0-9]+)([eE][+-]?[0-9]+)?[Li]?/],
 	    // builtin symbols
 	    [PR['PR_LITERAL'], /^(?:NULL|NA(?:_(?:integer|real|complex|character)_)?|Inf|TRUE|FALSE|NaN|\.\.(?:\.|[0-9]+))(?![A-Za-z0-9_.])/],
 	    // assignment, operators, and parens, etc.
 	    [PR['PR_PUNCTUATION'], /^(?:<<?-|->>?|-|==|<=|>=|<|>|&&?|!=|\|\|?|\*|\+|\^|\/|!|%.*?%|=|~|\$|@|:{1,3}|[\[\](){};,])/],
-	    [PR['PR_PLAIN'], /^[A-Za-z.]+[A-Za-z0-9_.]*(?![A-Za-z0-9_.])/],
+	    // valid variable names
+	    [PR['PR_PLAIN'], /^(?:[A-Za-z]+[A-Za-z0-9_.]*|\.[a-zA-Z_][0-9a-zA-Z\._]*)(?![A-Za-z0-9_.])/],
 	    // string backtick
 	    [PR['PR_STRING'], /^`.+`/]
         ]),
