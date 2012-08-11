@@ -48,4 +48,4 @@ PR['registerLangHandler'](
 	    // string backtick
 	    [PR['PR_STRING'], /^`.+`/]
         ]),
-    ['r', 's', 'R', 'S']);
+    ['r', 's', 'R', 'S', 'Splus']);
