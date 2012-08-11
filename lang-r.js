@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language handler for S, S-plus, and R source 
+ * Registers a language handler for S, S-plus, and R source code.
  *
  *
  * To use, include prettify.js and this file in your HTML page.
@@ -24,8 +24,7 @@
  *
  * Language definition from
  * http://cran.r-project.org/doc/manuals/R-lang.html.
- * Keywords and operators are mostly those included in the 
- * Pygments R lexer.
+ * Many regexes shared with the pygments SLexer.
  * 
  * @author jeffrey.arnold@gmail.com
  */
