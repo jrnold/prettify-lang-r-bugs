@@ -22,8 +22,9 @@
  * Then put your code in an HTML tag like
  *      <pre class="prettyprint lang-r"> code </pre>
  *
- * Language definitions from OpenBUGS 1.4 manual
- * and JAGS 3.2 manul.
+ * Language definitions from OpenBUGS 3.2.2 manual,
+ * http://www.openbugs.info/Manuals/Manual.html, and JAGS 3.2 manual,
+ * http://mcmc-jags.sourceforge.net.
  * 
  * @author jeffrey.arnold@gmail.com
  */
