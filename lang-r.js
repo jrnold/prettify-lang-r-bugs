@@ -24,7 +24,8 @@
  *
  * Language definition from
  * http://cran.r-project.org/doc/manuals/R-lang.html.
- * Many regexes shared with the pygments SLexer.
+ * Many of the regexes are shared  with the pygments SLexer, 
+ * http://pygments.org/.
  * 
  * @author jeffrey.arnold@gmail.com
  */
