@@ -39,7 +39,7 @@ PR['registerLangHandler'](
 	    // numbers
 	    [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
 	    // assignment, operators, and parens, etc.
-	    [PR['PR_PUNCTUATION'], /^(\+|-|\*|\/|\|\|[&]{2}|[<>=]=?|\^|%.*?%|{|}|\[|\]|\(|\)|:|,|;)/],
+	    [PR['PR_PUNCTUATION'], /^(\+|-|\*|\/|[|&]{2}|[<>=]=?|\^|%.*?%|{|}|\[|\]|\(|\)|:|,|;)/],
 	    [PR['PR_PLAIN'], /^[A-Za-z.]+[A-Za-z0-9_.]*(?![A-Za-z0-9_.])/],
         ]),
     ['bugs','jags']);
