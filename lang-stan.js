@@ -34,12 +34,12 @@ PR['registerLangHandler'](
             [PR['PR_PLAIN'],       /^[\t\n\r \xA0]+/, null, '\t\n\r \xA0'],
         ],
         [
-	    [PR['PR_TYPE'], /^(?:real|int|vector|row_vector|matrix|simplex|ordered|corr_matrix|cov_matrix)\b/],
-            [PR['PR_COMMENT'],     /^(?:(\/\/|#)[^\r\n]*|\/\*[\s\S]*?\*\/)/],
-	    [PR['PR_KEYWORD'],     /^(?:for|in|lp__|data|data|(transformed\s+)?(parameters|data)|model|generated\s+quantities|T)\b/, null],
-	    // numbers
-	    [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
-	    [PR['PR_PUNCTUATION'], /^\+|-|\.?\*|\.?\/|<-|~|{|}|\(|\)|;|,|:|\[|\]|\\|<|>|='/],
-	    [PR['PR_PLAIN'], /^[A-Za-z][A-Za-z0-9_]*\b/]
+	  [PR['PR_TYPE'], /^(?:int|real|(?:row_)?vector|(?:positive_)?ordered|simplex|(?:(?:corr|cov)_)?matrix)\b/],
+          [PR['PR_COMMENT'],     /^(?:(\/\/|#)[^\r\n]*|\/\*[\s\S]*?\*\/)/],
+	  [PR['PR_KEYWORD'],     /^(?:for|in|lp__|(transformed\s+)?(parameters|data)|model|generated\s+quantities|T|lower|upper|print)\b/, null],
+	  [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
+	  [PR['PR_PUNCTUATION'], /^\+|-|\.?\*|\.?\/|<-|~|{|}|\(|\)|;|,|:|\[|\]|\\|<|>|='/],
+	  [PR['PR_PLAIN'], /^[A-Za-z][A-Za-z0-9_]*\b/],
+          [PR['PR_STRING'], /"[^"]*?"/]
         ]),
     ['stan']);
