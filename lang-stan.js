@@ -36,7 +36,7 @@ PR['registerLangHandler'](
         [
 	  [PR['PR_TYPE'], /^(?:int|real|(?:row_)?vector|(?:positive_)?ordered|simplex|(?:(?:corr|cov)_)?matrix)\b/],
           [PR['PR_COMMENT'],     /^(?:(\/\/|#)[^\r\n]*|\/\*[\s\S]*?\*\/)/],
-	  [PR['PR_KEYWORD'],     /^(?:for|in|lp__|(transformed\s+)?(parameters|data)|model|generated\s+quantities|T|lower|upper|print)\b/, null],
+	  [PR['PR_KEYWORD'],     /^(?:for|in|lp__|(transformed\s+)?(parameters|data)|model|generated\s+quantities|T|lower|upper|print|if|else|while)\b/, null],
 	  [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
 	  [PR['PR_PUNCTUATION'], /^\+|-|\.?\*|\.?\/|<-|~|{|}|\(|\)|;|,|:|\[|\]|\\|<=?|>=?|==?|&&|\|\|!=?'/],
 	  [PR['PR_PLAIN'], /^[A-Za-z][A-Za-z0-9_]*\b/],
