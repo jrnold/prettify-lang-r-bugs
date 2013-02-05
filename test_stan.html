@@ -11,7 +11,9 @@ Stan example
 
 <pre class="prettyprint lang-stan">
 /* 
-comments
+A file for testing Stan syntax highlighting. 
+
+It is not a real model and will not compile
 */
 # also a comment
 // also a comment
@@ -26,22 +28,13 @@ data {
      matrix[3,3] qux;
      simplex[3] quux;
      ordered[3] corge;
-     positive_ordered[3] corge2;
+     positive_ordered[3] wibble;
      corr_matrix[3] grault;
      cov_matrix[3] garply;
-     
-     // bounds
-     int&lt;lower=0&gt; bar1;
-     int&lt;upper=1&gt; bar2;
-     int&lt;lower=0, upper=2&gt; bar3;
 
-     // bad names
-     // includes .
-     real foo.;
-     // beings with number
-     real 0foo;
-     // begins with _
-     real _foo;
+     real< lower=-1, upper=1 > foo1;
+     real< lower=0 > foo2;
+     real< upper=0 > foo3;
 }
 transformed data {
      real xyzzy;
@@ -72,26 +65,64 @@ model {
    // ~, <- are operators, 
    // T may be be recognized
    // normal is a function
-   fred ~ normal(0, 1) T(-0.5, 0.5);
-   // interior block
-   { 
-       real tmp;
-       // for, in should be highlighted
-       for (i in 1:10) {
-	   tmp <- tmp + 0.1;
-       }
-   }
+   real tmp0; 
+   real tmp1;
+   real tmp;
+   tmp <- 0;
+   tmp0 <- 0.0;
+   tmp1 <- 0.0;
+
+   fred ~ normal(0, 1) T[-0.5, 0.5];
+
    // lp__ should be highlighted
    // normal_log as a function
    lp__ <- lp__ + normal_log(plugh, 0, 1);
+   
+   // for, in should be highlighted
+   for (i in 1:10) {
+       tmp <- tmp + 0.1;
+   }
+           
+   while(tmp1 < 5.0) {
+       tmp0 <- tmp0 + 1.0;
+   }
+   if(tmp0 <= 0.0) {
+       print("case1");
+   } else if (temp1 >= 10.0) {
+       print("case2");
+   } else {
+       print("case");
+   }
 
-   // print statement with string literal
-   print("hello");
+   // all operators;
+   tmp1 || tmp0;
+   tmp1 && tmp0;
+   tmp1 == tmp0;
+   tmp1 != tmp0;   
+   tmp1 < tmp0;
+   tmp1 <= tmp1;
+   tmp1 > tmp0;
+   tmp1 >= tmp1;
+   tmp1 + tmp0;
+   tmp1 - tmp0;
+   tmp1 * tmp0;
+   tmp1 / tmp0;
+   tmp1 .* tmp0;
+   tmp1 ./ tmp0;
+   ! tmp1;
+   - tmp1;
+   + tmp1;
+   tmp1 ';
+
+   // print statement and string literal
+   print("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_~@#$%^&*`'-+={}[].,;: ");
+   print("Hello, world!");
+   print("");
 
 }
 generated quantities {
-   real foo1;
-   foo1 <- foo + 1;
+   real bar1;
+   bar1 <- foo + 1;
 }
 </pre>
 

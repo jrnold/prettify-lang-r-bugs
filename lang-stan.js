@@ -22,7 +22,7 @@
  * Then put your code in an HTML tag like
  *      <pre class="prettyprint lang-stan"> code </pre>
  *
- * The manual included in Stan 1.0, https://code.google.com/p/stan/, is the 
+ * The manual included in Stan 1.1.0, https://code.google.com/p/stan/, is the 
  * basis for the grammar and keywords.
  * 
  * @author jeffrey.arnold@gmail.com
@@ -38,8 +38,8 @@ PR['registerLangHandler'](
           [PR['PR_COMMENT'],     /^(?:(\/\/|#)[^\r\n]*|\/\*[\s\S]*?\*\/)/],
 	  [PR['PR_KEYWORD'],     /^(?:for|in|lp__|(transformed\s+)?(parameters|data)|model|generated\s+quantities|T|lower|upper|print|if|else|while)\b/, null],
 	  [PR['PR_LITERAL'], /^[+-]?(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?)/i],
-	  [PR['PR_PUNCTUATION'], /^\+|-|\.?\*|\.?\/|<-|~|{|}|\(|\)|;|,|:|\[|\]|\\|<=?|>=?|==?|&&|\|\|!=?'/],
-	  [PR['PR_PLAIN'], /^[A-Za-z][A-Za-z0-9_]*\b/],
-          [PR['PR_STRING'], /"[^"]*?"/]
+          [PR['PR_STRING'], /"[^"]*?"/],
+          [PR['PR_PUNCTUATION'], /^\+|-|\.?\*|\.?\/|<-|~|{|}|\(|\)|;|,|:|\[|\]|\\|<=?|>=?|!=?|==?|&&|\|{2}|'/],
+	  [PR['PR_PLAIN'], /^[A-Za-z][A-Za-z0-9_]*\b/]
         ]),
     ['stan']);
